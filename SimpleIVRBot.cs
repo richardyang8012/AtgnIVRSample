@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Microsoft.Bot.Sample.SimpleEchoBot
-{ 
+{
     public class SimpleIVRBot : IDisposable, ICallingBot
     {
         // below are the dtmf keys required for each of option, will be used for parsing results of recognize
@@ -281,7 +281,7 @@ namespace Microsoft.Bot.Sample.SimpleEchoBot
 
         private static PlayPrompt GetPromptForText(string text)
         {
-            var prompt = new Prompt { Value = text, Voice = VoiceGender.Male };
+            var prompt = new Prompt { Value = text, Voice = VoiceGender.Female };
             return new PlayPrompt { OperationId = Guid.NewGuid().ToString(), Prompts = new List<Prompt> { prompt } };
         }
 
