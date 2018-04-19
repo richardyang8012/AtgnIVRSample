@@ -7,7 +7,7 @@ namespace Microsoft.Bot.Sample.SimpleEchoBot
 {
     public static class IvrOptions
     {
-        internal const string WelcomeMessage = "Hello, you have successfully contacted AltiGen IVR Sample Provider.";
+        internal const string WelcomeMessage = "Hello, you have successfully contacted Fiserv IVR Sample Provider.";
 
         internal const string MainMenuPrompt =
             "If you are a new client press 1, for technical support press 2, if you need information about payment press 3, to hear more about the company press 4. To repeat the options press 5.";
