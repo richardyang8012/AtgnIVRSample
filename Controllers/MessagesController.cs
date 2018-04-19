@@ -1,7 +1,7 @@
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
 using System;
-using System.Diagnostics;
+//using System.Diagnostics;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
@@ -51,7 +51,7 @@ namespace Microsoft.Bot.Sample.SimpleEchoBot
                     case ActivityTypes.Typing:
                     case ActivityTypes.DeleteUserData:
                     default:
-                        Trace.TraceError($"Unknown activity type ignored: {activity.GetActivityType()}");
+                        //Trace.TraceError($"Unknown activity type ignored: {activity.GetActivityType()}");
                         break;
                 }
             }
