@@ -29,7 +29,7 @@ namespace Microsoft.Bot.Sample.SimpleEchoBot
         private const string PaymentDetails = "1";
         private const string PaymentNotVisible = "2";
 
-        private TelemetryClient telemetryClient = new TelemetryClient();
+        //private TelemetryClient telemetryClient = new TelemetryClient();
 
         private Participant caller;
         private Participant callee;
@@ -56,7 +56,7 @@ namespace Microsoft.Bot.Sample.SimpleEchoBot
         {
             var id = Guid.NewGuid().ToString();
             _callStateMap[incomingCallEvent.IncomingCall.Id] = new CallState();
-            telemetryClient.TrackTrace($"IncomingCallReceived - {incomingCallEvent.IncomingCall.Id}");
+            //telemetryClient.TrackTrace($"IncomingCallReceived - {incomingCallEvent.IncomingCall.Id}");
             caller = incomingCallEvent.IncomingCall.Participants.First(p => p.Originator);
             callee = incomingCallEvent.IncomingCall.Participants.First(p => !p.Originator);
             incomingCallEvent.ResultingWorkflow.Actions = new List<ActionBase>
@@ -130,7 +130,7 @@ namespace Microsoft.Bot.Sample.SimpleEchoBot
                     await connector.Conversations.SendToConversationAsync((Activity)message);
                     this._callStateMap.Remove(conversationId);
                 },
-                t => telemetryClient.TrackTrace("Bing Speech to Text failed with error: " + t)
+                t => Console.WriteLine("Bing Speech to Text failed with error: " + t)
                 );
             bs.CreateDataRecoClient();
             bs.SendAudioHelper(recordedContent);
